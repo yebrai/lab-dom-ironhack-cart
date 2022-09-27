@@ -1,30 +1,30 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  //console.log('Calculating subtotal, yey!');
   const price = product.querySelector('.price span');
   const quantity = product.querySelector('.quantity input');
   let subtotalPrice = quantity.value * price.innerText
-  let subtotalResult = product.querySelector(".subtotal")
-  subtotalResult = subtotalPrice.innerHTML
-  console.log(subtotalPrice)
+ // console.log(subtotalPrice)
   let subtotalSpan = product.querySelector(".subtotal span")
   subtotalSpan.innerHTML = subtotalPrice
+  return subtotalPrice
 }
 
 function calculateAll() {
 
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  let allProducts = document.querySelectorAll(".product")
+  let sum = 0
+  allProducts.forEach((eachProduct) => {
+    sum += updateSubtotal(eachProduct)
 
-  // ITERATION 2
-  //... your code goes here
+  })
 
   // ITERATION 3
-  //... your code goes here
+
+  let totalValue = document.querySelector("#total-value span")
+  totalValue.innerHTML = sum //No logro que me saque el numero, siempre da NaN o undefined
+
 }
 
 // ITERATION 4
