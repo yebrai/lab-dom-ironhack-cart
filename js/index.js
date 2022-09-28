@@ -46,6 +46,8 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
   let removeButtons = document.querySelector(".btn-remove");
   removeButtons.addEventListener("click", removeProduct)
+  let newProduct = document.querySelector("click", createProduct)
+  
   
 
 
