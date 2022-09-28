@@ -23,16 +23,16 @@ function calculateAll() {
   // ITERATION 3
 
   let totalValue = document.querySelector("#total-value span")
-  totalValue.innerHTML = sum //No logro que me saque el numero, siempre da NaN o undefined
-
+  totalValue.innerHTML = sum 
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  target.parentNode.parentNode.remove()
+  console.log(target.parentNode.parentNode)
+  
 }
 
 // ITERATION 5
@@ -44,6 +44,8 @@ function createProduct() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+  let removeButtons = document.querySelector(".btn-remove");
+  removeButtons.addEventListener("click", removeProduct)
   
 
 
